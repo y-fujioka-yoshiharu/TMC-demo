@@ -1,0 +1,149 @@
+package routines;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Hiragana2Roma {
+	    /**
+	     * kana2roma: convert hiragana to romaji.
+	     * 
+	     * 
+	     * {talendTypes} String
+	     * 
+	     * {Category} User Defined
+	     * 
+	     * {param} string("あ") 
+	     * 
+	     * {example} kana2roma("あ") # a.
+	     */
+	  public static String kana2roma(String s) {
+		  Map<String,String> m = new HashMap<>();
+		  	m.put("あ", "A");
+		    m.put("い", "I");
+		    m.put("う", "U");
+		    m.put("え", "E");
+		    m.put("お", "O");
+		    m.put("か", "KA");
+		    m.put("き", "KI");
+		    m.put("く", "KU");
+		    m.put("け", "KE");
+		    m.put("こ", "KO");
+		    m.put("さ", "SA");
+		    m.put("し", "SHI");
+		    m.put("す", "SU");
+		    m.put("せ", "SE");
+		    m.put("そ", "SO");
+		    m.put("た", "TA");
+		    m.put("ち", "CHI");
+		    m.put("つ", "TU");
+		    m.put("て", "TE");
+		    m.put("と", "TO");
+		    m.put("な", "NA");
+		    m.put("に", "NI");
+		    m.put("ぬ", "NU");
+		    m.put("ね", "NE");
+		    m.put("の", "NO");
+		    m.put("は", "HA");
+		    m.put("ひ", "HI");
+		    m.put("ふ", "FU");
+		    m.put("へ", "HE");
+		    m.put("ほ", "HO");
+		    m.put("ま", "MA");
+		    m.put("み", "MI");
+		    m.put("む", "MU");
+		    m.put("め", "ME");
+		    m.put("も", "MO");
+		    m.put("や", "YA");
+		    m.put("ゆ", "YU");
+		    m.put("よ", "YO");
+		    m.put("ら", "RA");
+		    m.put("り", "RI");
+		    m.put("る", "RU");
+		    m.put("れ", "RE");
+		    m.put("ろ", "RO");
+		    m.put("わ", "WA");
+		    m.put("を", "WO");
+		    m.put("ん", "N");
+		    m.put("が", "GA");
+		    m.put("ぎ", "GI");
+		    m.put("ぐ", "GU");
+		    m.put("げ", "GE");
+		    m.put("ご", "GO");
+		    m.put("ざ", "ZA");
+		    m.put("じ", "ZI");
+		    m.put("ず", "ZU");
+		    m.put("ぜ", "ZE");
+		    m.put("ぞ", "ZO");
+		    m.put("だ", "DA");
+		    m.put("ぢ", "DI");
+		    m.put("づ", "DU");
+		    m.put("で", "DE");
+		    m.put("ど", "DO");
+		    m.put("ば", "BA");
+		    m.put("び", "BI");
+		    m.put("ぶ", "BU");
+		    m.put("べ", "BE");
+		    m.put("ぼ", "BO");
+		    m.put("ぱ", "PA");
+		    m.put("ぴ", "PI");
+		    m.put("ぷ", "PU");
+		    m.put("ぺ", "PE");
+		    m.put("ぽ", "PO");
+		    m.put("きゃ", "KYA");
+		    m.put("きゅ", "KYU");
+		    m.put("きょ", "KYO");
+		    m.put("しゃ", "SYA");
+		    m.put("しゅ", "SYU");
+		    m.put("しょ", "SYO");
+		    m.put("ちゃ", "TYA");
+		    m.put("ちゅ", "TYU");
+		    m.put("ちょ", "TYO");
+		    m.put("にゃ", "NYA");
+		    m.put("にゅ", "NYU");
+		    m.put("にょ", "NYO");
+		    m.put("ひゃ", "HYA");
+		    m.put("ひゅ", "HYU");
+		    m.put("ひょ", "HYO");
+		    m.put("りゃ", "RYA");
+		    m.put("りゅ", "RYU");
+		    m.put("りょ", "RYO");
+		    m.put("ぎゃ", "GYA");
+		    m.put("ぎゅ", "GYU");
+		    m.put("ぎょ", "GYO");
+		    m.put("じゃ", "ZYA");
+		    m.put("じゅ", "ZYU");
+		    m.put("じょ", "ZYO");
+		    m.put("ぢゃ", "DYA");
+		    m.put("ぢゅ", "DYU");
+		    m.put("ぢょ", "DYO");
+		    m.put("びゃ", "BYA");
+		    m.put("びゅ", "BYU");
+		    m.put("びょ", "BYO");
+		    m.put("ぴゃ", "PYA");
+		    m.put("びゅ", "PYU");
+		    m.put("ぴょ", "PYO");
+		    m.put("ー", "-");
+
+		    StringBuilder t = new StringBuilder();
+	    for ( int i = 0; i < s.length(); i++ ) {
+	      if ( i <= s.length() - 2 )  {
+	        if ( m.containsKey(s.substring(i,i+2))) {
+	          t.append(m.get(s.substring(i, i+2)));
+	          i++;
+	        } else if (m.containsKey(s.substring(i, i+1))) {
+	          t.append(m.get(s.substring(i, i+1)));
+	        } else if ( s.charAt(i) == 'っ' ) {
+	          t.append(((String)(m.get(s.substring(i+1, i+2)))).charAt(0));
+	        } else {
+	          t.append(s.charAt(i));
+	        }
+	      } else {
+	        if (m.containsKey(s.substring(i, i+1))) {
+	          t.append(m.get(s.substring(i, i+1)));
+	        } else {
+	          t.append(s.charAt(i));
+	        }
+	      }
+	    }
+	    return t.toString();
+	  }
+	}
