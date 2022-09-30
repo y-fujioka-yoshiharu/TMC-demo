@@ -10,6 +10,8 @@
   }, {
     "id" : "org.talend.lite.dq.feature.feature.group"
   }, {
+    "id" : "org.talend.studio.components.tcompv0.googledrive.feature.feature.group"
+  }, {
     "id" : "org.talend.studio.components.tcompv0.snowflakeee.feature.feature.group"
   } ]
 }
